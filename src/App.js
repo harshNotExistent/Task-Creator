@@ -108,7 +108,8 @@ handleUpcoming(){
       ...task,
       startDate:newDate
     }
-    taskList=JSON.parse(localStorage.getItem('TaskList'));
+    console.log('task',task);
+    taskList=JSON.parse(localStorage.getItem('TaskList'))==null?[]:JSON.parse(localStorage.getItem('TaskList'));
     taskList.push(task);
     taskList.sort(function(a,b){
       return new Date(a.startDate)-new Date(b.startDate);
